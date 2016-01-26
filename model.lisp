@@ -1,0 +1,25 @@
+(cl:in-package #:text-annotation)
+
+(defclass word ()
+  ((%text :initarg :text :reader text)))
+
+(defmethod print-object ((object word) stream)
+  (format stream "~a" (text object)))
+
+(defclass sentence ()
+  ((%all-words :initarg :all-words :reader all-words)
+   (%predicate :initform '() :accessor predicate)
+   (%agent :initform '() :accessor agent)
+   (%experiencer :initform '() :accessor experiencer)
+   (%patient :initform '() :accessor patient)
+   (%temporal :initform '() :accessor temporal)
+   (%location :initform '() :accessor location)
+   (%purpose :initform '() :accessor purpose)
+   (%manner :initform '() :accessor manner)
+   (%degree :initform '() :accessor degree)
+   (%negation :initform '() :accessor negation)
+   (%model :initform '() :accessor model)
+   (%other :initform '() :accessor other)))
+
+(defclass model ()
+  ((%sentences :initarg :sentences :reader sentences)))
