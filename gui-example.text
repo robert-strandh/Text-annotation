@@ -1,0 +1,87 @@
+Hey,
+
+we've talked a couple weeks ago about writing GUI with McCLIM, and you
+said that you will be able to hint me where to start, when I'll clarify
+my conception.
+
+Here's a conception of the layout I came with. Would it be feasible to
+write it in McCLIM? Also – what platforms are supported by it? How much
+work in your opinion will it take to implement such thing?
+
+
+  +-------------------------------------------------------------------------+
+  |                                                                         |
+  | Sentence to annotate by user (selectable).                              |
+  |                                                                         |
+  +--------------------+----------------------------------------------------+
+  |                    |                                                    |
+  | Predicate (action) |                                                    |
+  |                    |                                                    |
+  +--------------------+----------------------------------------------------+
+  | Agent         Who? |                                                    |
+  | Experiencer  What? |                                                    |
+  | Patient      Whom? |                                                    |
+  | Temporal     When? |                                                    |
+  | Location    Where? |                                                    |
+  | Purpose       Why? |                                                    |
+  | Manner        How? |                                                    |
+  | Degree        How? |                                                    |
+  | Negation      How? |                                                    |
+  | Model         How? |                                                    |
+  | Other         How? |                                                    |
+  +--------------------+                                                    |
+  |                    |                                                    |
+  |                    |                                                    |
+  |                    |                                                    |
+  |                    |                                                    |
+  |                    |                                                    |
+  |  Other predicates  |                                                    |
+  |  in the same       +----------------------------------------------------+
+  |  semantic frame    |                                                    |
+  |                    |   +-------------------+   +-------------------+    |
+  |                    |   |   New predicate   |   |   Next sentence   |    |
+  |                    |   +-------------------+   +-------------------+    |
+  |                    |                                                    |
+  +--------------------+----------------------------------------------------+
+
+  Annotation window. Selecting part of the sentence followed with button
+  click (Predicate, Agent, Experience, etc. are buttons) should fill the
+  appropriate row in the right column. If more predicates are present,
+  then selecting one in the list "Other predicates..." should replace
+  right column with it's annotated fillers.
+
+
+  +-----------------------------------------------------+---------+---------+
+  | Reference translation                               |         |         |
+  +-----------------------------------------------------+  PREV   |  NEXT   +
+  | Machine translation                                 |         |         |
+  +---------+------------------------+------------------+-----+---+---------+
+  | pred    |                        |                        | [ ] [ ] [ ] |
+  | arg     |                        |                        | [ ] [ ] [ ] |
+  | arg     |                        |                        | [ ] [ ] [ ] |
+  | arg     |                        |                        | [ ] [ ] [ ] |
+  +---------+------------------------+------------------------+-------------+
+  | pred    |                        |                        | [ ] [ ] [ ] |
+  | arg     |                        |                        | [ ] [ ] [ ] |
+  | arg     |                        |                        | [ ] [ ] [ ] |
+  | arg     |                        |                        | [ ] [ ] [ ] |
+  | arg     |                        |                        | [ ] [ ] [ ] |
+  +---------+------------------------+------------------------+-------------+
+
+  Frame alignment window. This one should be fairly easy. Second and
+  third column are filled with fillers from the annotation. User has to
+  select one checkbox for each ("correct", "partial", "incorrect"). This
+  should be done for each semantic frame (selecatble with prev/next).
+
+There is no rush with it. If you don't have time, please let me
+know. I'm currently considering the following toolkits:
+
+- McCLIM
+- CommonQt
+- LTK
+- Custom Weblocks application
+
+I have now some poor-mans command line interface :).
+
+Best regards,
+Daniel
