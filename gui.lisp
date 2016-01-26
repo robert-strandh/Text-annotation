@@ -213,7 +213,3 @@
     (action com-move-selection text-annotation)
     (object)
   `(,object))
-
-(define-text-annotation-command (com-inspect :name t) ()
-  (clueless:inspect clim:*application-frame*))
-
